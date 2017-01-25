@@ -1,5 +1,7 @@
 package com.company;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.io.Console;
@@ -26,6 +28,10 @@ public class Main {
         Date lowerBound = lower.getTime();
         Date upperBound = upper.getTime();
 
-        System.out.printf("You were born between the dates of " + lowerBound.toString() + " and " + upperBound.toString() + ".");
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+        String lString = df.format(lowerBound);
+        String uString = df.format(upperBound);
+
+        System.out.printf("You were born between the dates of " + lString + " and " + uString + ".");
     }
 }
